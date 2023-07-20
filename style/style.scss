@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* colors */
+    /* primary */
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    /* neutral */
+    --grayish-blue: hsl(217, 19%, 38%);
+    --Dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-Blue: hsl(218, 23%, 16%);
+    /* shadow */
+    --shadow-1: 30px 50px 80px 0px rgba(0, 0, 0, 0.10);
+    --shadow-2: 0px 0px 40px 0px var(--neon-green);
+
+    /* font */
+    --font-family: 'Manrope', sans-serif;
+    --heading: 800 0.8125rem/normal var(--font-family);
+    --quote: 800 1.75rem/normal var(--font-family);
+}
+
+body {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    font-family: var(--font-family);
+    background-color: var(--dark-Blue);
+}
+.site-main{
+    padding: 0 1.5rem;
+    display: grid;
+    place-items: center;
+}
+.card {
+    width: min(100%, 33.75rem);
+    padding: 2.5rem 1.5rem 4rem 1.5rem;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--Dark-grayish-blue);
+    box-shadow: var(--shadow-1);
+    @media screen and (min-width: 590px) {
+        padding: 3rem 3rem 4.5rem 3rem;
+    }
+    &__advice-id{
+        font: var(--heading);
+        color: var(--neon-green);
+        margin-bottom: 1.5rem;
+    }
+    &__quote{
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font: var(--quote);
+        color: var(--light-cyan);
+        @media screen and (min-width: 590px) {
+            margin-bottom: 2.5rem;
+        }
+            
+    }
+    &__div{
+        width: 100%;
+    }
+    &__btn{
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        position: absolute;
+        bottom: -32px;
+        background-color: var(--neon-green);
+        transition: box-shadow 0.3s, transform 0.3s ease-in-out;
+        &:hover{
+            cursor: pointer;
+            transform: rotate(180deg);
+            box-shadow: var(--shadow-2);
+        }
+    }
+}
+
+.attribution {
+    margin-bottom: 2rem;
+    font-size: 11px;
+    text-align: center;
+    color: var(--light-cyan);
+
+    & a {
+        color: var(--neon-green);
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

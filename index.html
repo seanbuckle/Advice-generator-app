@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Advice generator app</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <script defer src="./script/script.js"></script>
+  </head>
+  <body>
+    <main class="site-main">
+      <article class="card">
+        <p class="card__advice-id">Advice #<span id="advice-id"></span></p>
+        <q class="card__quote" id="advice"></q>
+        <picture>
+          <source
+            media="(min-width: 296px)"
+            srcset="./images/pattern-divider-desktop.svg"
+          />
+          <img
+            class="card__div"
+            src="./images/pattern-divider-mobile.svg"
+            alt="divider"
+          />
+        </picture>
+        <button class="card__btn" id="generate">
+          <img src="./images/icon-dice.svg" alt="dice" />
+        </button>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://www.frontendmentor.io/profile/seanbuckle">Sean Buckle</a>.
+      </p>
+    </footer>
+  </body>
+</html>
