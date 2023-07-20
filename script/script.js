@@ -19,5 +19,5 @@ window.addEventListener('load', ()=>  {
     let btn = document.getElementById('generate')
     btn.addEventListener('click', ()=> {
         generate();
-    })
+    });
 });
