@@ -1,23 +1,22 @@
-function generate(){
-    url = "https://api.adviceslip.com/advice"
-    fetch(url)
-    .then((response) => {
-        return response.json();
-    })
-    .then((data) => {
-        let idText = document.getElementById('advice-id');
-        let adviceText = document.getElementById('advice');
-        let id = data.slip.id
-        let advice = data.slip.advice
-        idText.innerHTML = id;
-        adviceText.innerHTML = advice;
-    })
-}
-
-window.addEventListener('load', ()=>  {
-    generate();
-    let btn = document.getElementById('generate')
-    btn.addEventListener('click', ()=> {
-        generate();
+"use strict";
+function generate() {
+    const url = "https://api.adviceslip.com/advice";
+    fetch(url, { cache: "no-cache" })
+        .then((response) => response.json())
+        .then((data) => {
+        const idText = document.getElementById("advice-id");
+        const adviceText = document.getElementById("advice");
+        const { id, advice } = data.slip;
+        if (idText)
+            idText.innerHTML = id.toString();
+        if (adviceText)
+            adviceText.innerHTML = advice;
     });
+}
+window.addEventListener("load", () => {
+    generate();
+    const btn = document.getElementById("generate");
+    if (btn) {
+        btn.addEventListener("click", generate);
+    }
 });
